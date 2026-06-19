@@ -8,3 +8,6 @@ class Settings:
 
         # Window background color
         self.bg_color = (20, 30, 55)
+
+        # Ship Settings
+        self.ship_speed = 1.5
