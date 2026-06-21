@@ -79,6 +79,23 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
+        self._check_bullet_alien_collusion()
+
+    def _check_bullet_alien_collusion(self):
+        """Processing collusion between bullets and aliens"""
+        # Delete bullets and aliens in collusion
+        collusion = pygame.sprite.groupcollide(
+            self.bullets, self.aliens, True, True
+        )
+
+        # Check hit in aliens
+        # When found hit - del bullet and alien
+        if not self.aliens:
+            # Delete exist bullets and create new fleet
+            self.bullets.empty()
+            self._create_fleet()
+
+
     def _create_fleet(self):
         """Create invasion fleet"""
         # Create alien and calculation amount of aliens in the row
