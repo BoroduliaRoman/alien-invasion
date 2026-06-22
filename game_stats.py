@@ -7,7 +7,7 @@ class GameStats:
         self.reset_stats()
 
         # Game Alien Invasion launch in active state
-        self.game_active = True
+        self.game_active = False
 
     def reset_stats(self):
         """Initialized statistic that changing during the game"""
